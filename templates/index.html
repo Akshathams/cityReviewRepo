@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <title>My Blog</title>
+  </head> <!------------------------closing head------------------------->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href='#'>WorldView</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Blog</a>
+            </li>
+          </ul>
+        </div>
+    </div>
+
+</nav><!-------------------------closing nav-------------------------------------->
+  <body>
+<div class='container'>
+<br>
+<div class="jumbotron">
+        <div class="row">
+				<div class="col-sm-4"></div>
+
+				<div class="col-sm-4 well">
+					<h3 class="text-center"><b>Review your favirioute City...</b></h3>
+
+					<form method="post">
+						<div class="form-group">
+							<label>CityName</label>
+							<input type="text" class="form-control" name="city">
+						</div>
+
+						<div class="form-group">
+							<label>Describe</label>
+							<input type="text" class="form-control" name="review">
+						</div>
+
+						<div class="form-group text-center">
+							<button class="btn btn-primary" type="submit">Submit</button>
+						</div>
+					</form>
+
+				</div>
+				<!------------------middle 4 end----------------------->
+				<div class="col-sm-4"></div>
+			</div><!-------row2 ends------->
+</div><!----------jumbotron i.e row1 ends------------->
+
+{% for city in cities %}
+<div class="row">
+		<div class="col-sm-3">{{ city.city_name}}</div>
+
+		<div class="col-sm-9">{{ city.review }}</div>
+
+</div><!-------------row2 ends--------------------->
+		{% endfor %}
+
+<br>
+</div>
+  </body>
+</html>
